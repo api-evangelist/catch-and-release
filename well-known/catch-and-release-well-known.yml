@@ -1,0 +1,15 @@
+generated: '2026-07-18'
+method: searched
+source: live probe of /.well-known/ on catch-and-release hosts
+host: https://auth.catchandrelease.com
+documents:
+- path: /.well-known/openid-configuration
+  status: 200
+  file: catch-and-release-openid-configuration.json
+  note: FusionAuth OIDC discovery for the Catch&Release app login (auth.catchandrelease.com)
+- path: /.well-known/oauth-authorization-server
+  status: 404
+notes:
+- host: https://www.catchandrelease.com
+  observation: single-page app returns HTTP 200 with the index.html shell for all paths,
+    so /.well-known/security.txt is a soft-404 (HTML, not RFC 9116) and is not a real document.

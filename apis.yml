@@ -1,8 +1,26 @@
 aid: catch-and-release
+accessModel:
+  pricing: unknown
+  onboarding: unknown
+  trial: false
+  try_now: false
+  public: false
+  label: Unknown
+  confidence: low
+  source: []
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/catch-and-release.png
 name: Catch&Release
-description: 'Catch&Release is a company surfaced as a portfolio company of accel and added to the API
-  Evangelist network as a stub for enrichment. Sector: cloud-saas. This profile is a lead awaiting the
-  enrichment pipeline.'
+description: 'Catch&Release is a UGC creator platform and content-licensing marketplace that
+  helps brands and agencies discover, license, and clear rights for "found content" — real
+  videos, photos, and footage created by everyday people and creators — for use in advertising
+  and marketing campaigns. Its workspace lets marketing teams search and curate licensable
+  moments, send content calls to its creator community, negotiate offers, and handle the
+  legal clearance and rights packages, while creators earn passive income by licensing
+  clips from their camera rolls. The platform pairs a brand/agency workspace (collections,
+  storyboards, teams) with a creator community, using an access-first, pay-for-what-you-use
+  model. Added to the API Evangelist network from an Accel portfolio lead.'
 url: https://raw.githubusercontent.com/api-evangelist/catch-and-release/refs/heads/main/apis.yml
 x-type: company
 x-source: vc-portfolio
@@ -12,10 +30,17 @@ x-tier: stub
 x-tier-reason: portfolio-lead
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-17'
+modified: '2026-07-18'
 tags:
 - Company
 - Cloud Saas
+- Content Licensing
+- User Generated Content
+- Creator Economy
+- Video
+- Advertising
+- Marketing
+- Media
 apis: []
 maintainers:
 - FN: Kin Lane
@@ -25,3 +50,26 @@ maintainers:
 common:
 - type: Website
   url: https://www.catchandrelease.com/
+- type: About
+  url: https://www.catchandrelease.com/m/about-us
+- type: Pricing
+  url: https://www.catchandrelease.com/m/pricing
+- type: Blog
+  url: https://www.catchandrelease.com/m/resources/blog
+- type: Support
+  url: https://www.catchandrelease.com/m/faq
+- type: SignUp
+  url: https://www.catchandrelease.com/sign-up
+- type: TermsOfService
+  url: https://www.catchandrelease.com/m/terms-of-use
+- type: PrivacyPolicy
+  url: https://www.catchandrelease.com/m/privacy-policy
+- type: WellKnown
+  url: well-known/catch-and-release-well-known.yml
+- type: DomainSecurity
+  url: security/catch-and-release-domain-security.yml
+x-enrichment:
+  date: '2026-07-19'
+  status: backfilled
+  pass: local-v1
+  note: backfilled from .gitignore signal + verified work evidence
