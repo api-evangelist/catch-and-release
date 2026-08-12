@@ -30,7 +30,7 @@ x-tier: stub
 x-tier-reason: portfolio-lead
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-18'
+modified: '2026-08-12'
 tags:
 - Company
 - Cloud Saas
@@ -68,8 +68,45 @@ common:
   url: well-known/catch-and-release-well-known.yml
 - type: DomainSecurity
   url: security/catch-and-release-domain-security.yml
+- type: GitHubOrganization
+  url: https://github.com/CatchRelease
+- type: StatusPage
+  url: https://status.catchandrelease.com/
+- type: Lifecycle
+  url: lifecycle/catch-and-release-lifecycle.yml
+- type: Packages
+  url: packages/catch-and-release-packages.yml
+- type: Plans
+  url: plans/catch-and-release-plans-pricing.yml
+- type: RateLimits
+  url: rate-limits/catch-and-release-rate-limits.yml
+- type: LLMsTxt
+  url: llms/catch-and-release-llms.txt
 x-enrichment:
-  date: '2026-07-19'
-  status: backfilled
+  date: '2026-08-12'
+  status: minimal
+  artifacts_added: 6
   pass: local-v1
-  note: backfilled from .gitignore signal + verified work evidence
+x-coverage:
+  state: none
+  reason: no-developer-program
+  detail: >-
+    Catch&Release ships only an end-user web application — its 415-URL sitemap contains
+    zero developer or API pages, its own GitHub organization (github.com/CatchRelease,
+    35 public repos) contains no OpenAPI or Swagger file, and every path on the product
+    host app.catchandrelease.com returns HTTP 302 to a FusionAuth login, while the terms
+    of use prohibit automated access outright.
+  evidence:
+  - url: https://www.catchandrelease.com/sitemap.xml
+    status: 200
+  - url: https://www.catchandrelease.com/openapi.json
+    status: 200
+  - url: https://app.catchandrelease.com/openapi.json
+    status: 302
+  - url: https://www.catchandrelease.com/m/api
+    status: 404
+  - url: https://auth.catchandrelease.com/.well-known/openid-configuration
+    status: 200
+  - url: https://status.catchandrelease.com/api/v2/summary.json
+    status: 200
+  checked: '2026-08-12'

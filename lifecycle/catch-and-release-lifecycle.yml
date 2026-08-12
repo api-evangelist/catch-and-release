@@ -1,0 +1,87 @@
+generated: '2026-08-12'
+method: searched
+source: >-
+  https://status.catchandrelease.com/ (HTTP 200, Atlassian Statuspage,
+  page id l66y5x85nt56, "Catch+Release") and its public JSON endpoints
+  https://status.catchandrelease.com/api/v2/status.json and
+  /api/v2/summary.json (both HTTP 200); versioning/deprecation searched across
+  the full 415-URL sitemap at https://www.catchandrelease.com/sitemap.xml and
+  the terms of use at https://www.catchandrelease.com/m/terms-of-use.
+provider: Catch&Release
+providerId: catch-and-release
+versioning:
+  scheme: none-published
+  mechanism: null
+  docs: null
+  notes: >-
+    Catch&Release publishes no public API and therefore no API versioning policy.
+    The product web app at app.catchandrelease.com is served from an internal
+    origin (internal-v2.catchandrelease.com) behind a FusionAuth OAuth login;
+    every unauthenticated path 302s to auth.catchandrelease.com/oauth2/authorize.
+    The only version string exposed publicly is the FusionAuth build (1.64.1) on
+    the login page assets, which is a vendor version, not an API version.
+deprecation:
+  policy_url: null
+  changelog: null
+  sunset_header: false
+  notes: >-
+    No deprecation or sunset policy is published. No `Deprecation` pointer is
+    emitted in apis.yml — the artifact records the absence, not a policy.
+sla:
+  url: null
+  public_uptime_target: null
+  notes: >-
+    No public uptime SLA. The terms of use (https://www.catchandrelease.com/m/terms-of-use)
+    carry no availability commitment and explicitly prohibit automated access
+    ("agree not to scrape or otherwise use automated means to access or gather
+    information from the Website").
+status_page: https://status.catchandrelease.com/
+status_page_detail:
+  vendor: Atlassian Statuspage
+  page_id: l66y5x85nt56
+  page_name: Catch+Release
+  time_zone: America/Los_Angeles
+  machine_readable:
+    - url: https://status.catchandrelease.com/api/v2/status.json
+      status: 200
+      note: Current overall indicator + description.
+    - url: https://status.catchandrelease.com/api/v2/summary.json
+      status: 200
+      note: Components, active incidents and scheduled maintenances.
+    - url: https://status.catchandrelease.com/history.rss
+      status: 200
+      note: Incident history feed (empty at probe time).
+  observed:
+    fetched: '2026-08-12'
+    indicator: none
+    description: All Systems Operational
+    open_incidents: 0
+    scheduled_maintenances: 0
+  components:
+    - Website
+    - Backend Services
+    - Workflow Engines
+    - Dependent Services
+    - AWS rds-us-west-2
+    - AWS eks-us-west-2
+    - AWS s3-us-west-2
+    - AWS route53
+    - AWS route53resolver-us-west-2
+    - Front API and integrations
+    - Front Gmail
+    - Front Push notifications
+    - Front Real time events
+    - SendGrid API
+    - SendGrid API v3
+    - SendGrid Email Activity
+    - SendGrid Event Webhook
+    - Temporal us-west-2
+  note: >-
+    The component list is the most machine-readable disclosure Catch&Release
+    publishes about its own architecture: AWS us-west-2 (EKS, RDS, S3, Route 53),
+    Temporal for workflow orchestration, and third-party dependencies on Front
+    and SendGrid. Every "API" named in the component list belongs to a VENDOR
+    (Front, SendGrid) — none of them is a Catch&Release API.
+rate_limits: null
+deprecated_products: []
+deprecated_operations: []

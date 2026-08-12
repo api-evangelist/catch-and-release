@@ -1,0 +1,40 @@
+specification: API Commons Rate Limits
+specificationVersion: '0.1'
+schema: https://raw.githubusercontent.com/api-evangelist/interface-research/main/schema/api-commons.yml#/$defs/RateLimits
+provider: Catch&Release
+providerId: catch-and-release
+generated: '2026-08-12'
+method: searched
+created: '2026-08-12'
+modified: '2026-08-12'
+source: >-
+  Searched the entire public surface for published limits: the 415-URL sitemap at
+  https://www.catchandrelease.com/sitemap.xml (HTTP 200, zero developer/API pages),
+  the pricing page https://www.catchandrelease.com/m/pricing (HTTP 200), the FAQ
+  https://www.catchandrelease.com/m/faq (HTTP 200) and the terms of use
+  https://www.catchandrelease.com/m/terms-of-use (HTTP 200).
+tags:
+  - Rate Limiting
+description: >-
+  Catch&Release publishes no API and therefore publishes no rate limits. This is a
+  recorded absence, not an unchecked field. The only machine-callable endpoints on
+  the company's public surface are the Atlassian Statuspage JSON endpoints under
+  https://status.catchandrelease.com/api/v2/, whose limits are set by Atlassian,
+  not by Catch&Release. The terms of use go the other way and prohibit programmatic
+  access outright: "agree not to scrape or otherwise use automated means to access
+  or gather information from the Website".
+limit_count: 0
+limits: []
+headers: {}
+responseCodes: {}
+notes:
+  - >-
+    No X-RateLimit-*, RateLimit-* or Retry-After headers were observed, because
+    there is no unauthenticated Catch&Release API endpoint to observe them on.
+    app.catchandrelease.com returns HTTP 302 to the FusionAuth authorize endpoint
+    for every path probed.
+  - >-
+    robots.txt (https://www.catchandrelease.com/robots.txt, HTTP 200) disallows
+    /dashboard, /collections*, /offer*, /shots*, /picker, /review, /request-*
+    and /usage-details — the entire application surface — which is the closest
+    thing the company publishes to a machine-access policy.

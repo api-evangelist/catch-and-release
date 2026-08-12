@@ -1,0 +1,116 @@
+generated: '2026-08-12'
+method: searched
+source: >-
+  https://registry.npmjs.org/-/v1/search?text=catchandrelease (npm registry search,
+  HTTP 200) plus per-package metadata from https://registry.npmjs.org/<pkg>; ownership
+  confirmed against the GitHub organization https://github.com/CatchRelease
+  ("Catch+Release", blog http://catchandrelease.com, 35 public repos) via the
+  GitHub REST API.
+provider: Catch&Release
+providerId: catch-and-release
+description: >-
+  Catch&Release publishes no API client SDK, because it publishes no public API
+  (see x-coverage in apis.yml). What it does publish on npm is a set of FIRST-PARTY
+  INTERNAL ENGINEERING LIBRARIES from its own product codebase — a React design
+  system, a client-side ORM, and a Jest matcher pack — released under the
+  @catchandrelease scope and the github.com/CatchRelease organization. They are
+  recorded here as real, verified first-party packages, but they are NOT clients
+  for a Catch&Release API and therefore do not earn an `SDKs` pointer in apis.yml.
+  Every one of them is stale: the newest publish across all four is 2022-03-09,
+  and the GitHub repositories behind them were last pushed in January 2023.
+sdk_count: 0
+package_count: 4
+packages:
+  - language: javascript
+    registry: npm
+    name: "@catchandrelease/arbor"
+    url: https://www.npmjs.com/package/@catchandrelease/arbor
+    source: https://github.com/CatchRelease/arbor
+    install: npm install @catchandrelease/arbor
+    official: true
+    kind: internal-library
+    license: MIT
+    version: 0.110.2
+    published: '2022-03-09'
+    first_published: '2018-10-15'
+    release_count: 198
+    note: >-
+      "React component library for Catch&Release" — the company's internal design
+      system (repo description: "Reacklebox - Catch&Release's Design System"). Not
+      an embeddable component for third parties and not an API client. Last npm
+      release 2022-03-09; repo last pushed 2023-01-09.
+  - language: javascript
+    registry: npm
+    name: "@catchandrelease/crorm"
+    url: https://www.npmjs.com/package/@catchandrelease/crorm
+    source: https://github.com/CatchRelease/crorm
+    install: npm install @catchandrelease/crorm
+    official: true
+    kind: internal-library
+    license: MIT
+    version: 8.1.3
+    published: '2021-08-30'
+    first_published: '2019-03-08'
+    release_count: 8
+    note: >-
+      "Catch&Release ORM" — a React/Redux client-side ORM used inside the product
+      web app. Scoped successor to the unscoped `crorm` package. Last release
+      2021-08-30; repo last pushed 2023-01-06.
+  - language: javascript
+    registry: npm
+    name: crorm
+    url: https://www.npmjs.com/package/crorm
+    source: https://github.com/CatchRelease/crorm
+    install: npm install crorm
+    official: true
+    kind: internal-library
+    license: MIT
+    version: 6.0.0
+    published: '2019-02-21'
+    first_published: '2018-01-26'
+    release_count: 23
+    deprecated_by: "@catchandrelease/crorm"
+    note: >-
+      Unscoped original of the Catch&Release ORM, superseded by the scoped
+      @catchandrelease/crorm. Last release 2019-02-21.
+  - language: javascript
+    registry: npm
+    name: "@catchandrelease/jest-react-router"
+    url: https://www.npmjs.com/package/@catchandrelease/jest-react-router
+    source: https://github.com/CatchRelease/jest-react-router
+    install: npm install --save-dev @catchandrelease/jest-react-router
+    official: true
+    kind: internal-library
+    license: MIT
+    version: 1.0.2
+    published: '2019-11-01'
+    first_published: '2019-03-08'
+    release_count: 4
+    note: >-
+      "Jest matchers for use with React Router." Test tooling, not an API client.
+      Last release 2019-11-01; repo last pushed 2023-01-03.
+registries_checked:
+  - registry: npm
+    query: https://registry.npmjs.org/-/v1/search?text=catchandrelease
+    status: 200
+    hits: 4
+  - registry: pypi
+    query: https://pypi.org/pypi/catchandrelease/json
+    status: 404
+    hits: 0
+  - registry: github
+    query: https://api.github.com/orgs/CatchRelease/repos
+    status: 200
+    hits: 35
+    note: >-
+      35 public repositories, overwhelmingly forks of third-party OSS (react-select,
+      enzyme, jsonb_accessor, heroku buildpacks) plus Ruby wrappers for OTHER
+      companies' APIs (pandadoc-api, rebrandly, omniauth-instagram-graph). No
+      Catch&Release API client, no OpenAPI/Swagger file (GitHub code search for
+      filename:openapi and filename:swagger in org:CatchRelease both returned 0).
+notes:
+  - >-
+    No `SDKs` pointer is emitted in apis.yml. A design system, an ORM and a Jest
+    matcher pack are not SDKs for the provider's API, and there is no provider API
+    for them to be SDKs of. Emitting one would credit Catch&Release with a client
+    library surface it does not have.

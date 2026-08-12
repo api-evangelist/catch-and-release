@@ -1,0 +1,86 @@
+# Catch&Release
+
+> Catch&Release ("Catch+Release") is a UGC creator platform and content-licensing
+> marketplace for brands and agencies. It helps marketing teams discover, clear, and
+> license "found content" — real videos and photos made by everyday people and
+> creators — for use in advertising campaigns, and it pays creators for the clips it
+> licenses from them.
+
+## Machine-access status — read this first
+
+Catch&Release publishes **no public API**. As of 2026-08-12 there is no developer
+portal, no API reference, no OpenAPI/AsyncAPI/GraphQL contract, no SDK, no webhook
+catalog, no MCP server, and no A2A agent card anywhere on its public surface. A full
+crawl of the 415-URL sitemap (https://www.catchandrelease.com/sitemap.xml) returns
+zero developer or API pages, and GitHub code search across the company's own
+organization returns zero OpenAPI or Swagger files.
+
+The product is used through the web application at https://app.catchandrelease.com,
+which sits entirely behind a FusionAuth OAuth login: every path returns HTTP 302 to
+https://auth.catchandrelease.com/oauth2/authorize.
+
+The terms of use explicitly prohibit programmatic access: users "agree not to scrape
+or otherwise use automated means to access or gather information from the Website."
+robots.txt disallows the entire application surface (/dashboard, /collections*,
+/offer*, /shots*, /picker, /review, /request-*, /usage-details). An agent should not
+attempt to drive this product automatically. Use the human sign-up and the sales
+contact below.
+
+## The only machine-readable endpoints
+
+- [Status page JSON — current](https://status.catchandrelease.com/api/v2/status.json): Atlassian Statuspage overall indicator for Catch+Release. HTTP 200, anonymous.
+- [Status page JSON — summary](https://status.catchandrelease.com/api/v2/summary.json): Components, open incidents, scheduled maintenances. HTTP 200, anonymous.
+- [Status incident history (RSS)](https://status.catchandrelease.com/history.rss): HTTP 200, anonymous.
+- [OIDC discovery](https://auth.catchandrelease.com/.well-known/openid-configuration): FusionAuth OpenID Connect discovery for the application login. Not an API authorization surface.
+- [JWKS](https://auth.catchandrelease.com/.well-known/jwks.json): Public signing keys for the OIDC issuer.
+
+## Product
+
+- [Home](https://www.catchandrelease.com/): Licensing content from the internet for advertising campaigns.
+- [Features](https://www.catchandrelease.com/m/features): The workspace surface.
+- [AI-powered search](https://www.catchandrelease.com/m/features/ai-powered-search): Finding licensable moments across the internet and the creator marketplace.
+- [Collections](https://www.catchandrelease.com/m/features/create-collections): Curating shots into project collections.
+- [Storyboards](https://www.catchandrelease.com/m/features/create-storyboards): Assembling scenes and alternates from collected shots.
+- [License content](https://www.catchandrelease.com/m/features/license-content): Clearance and rights acquisition.
+- [Rights definitions](https://www.catchandrelease.com/m/features/license-content/rights-definitions): What each right in a license package means.
+- [Content calls](https://www.catchandrelease.com/m/content-calls): Briefing the creator community to make content on request.
+- [Creator community](https://www.catchandrelease.com/m/creator-community): The supply side — creators licensing clips from their camera rolls.
+
+## Commercial
+
+- [Pricing](https://www.catchandrelease.com/m/pricing): Free workspace; $250 per shot clearance for internet/partner content, $0 for Creator Marketplace content; licensing fees negotiated per usage, duration, rightsholders and creator valuation; partner libraries from $975.
+- [Pricing calculator](https://www.catchandrelease.com/pricing-calculator)
+- [Solutions for brands](https://www.catchandrelease.com/m/solutions/for-brands)
+- [Solutions for agencies](https://www.catchandrelease.com/m/solutions/for-agencies)
+- [Expert curation](https://www.catchandrelease.com/m/services/expert-curation): Custom-priced add-on service.
+- [Managed services](https://www.catchandrelease.com/m/services/managed-services): Custom-priced add-on service.
+- [Talk to an expert](https://www.catchandrelease.com/m/talk-to-an-expert): The sales contact path.
+- [Sign up](https://www.catchandrelease.com/sign-up)
+- [Storyteller sign up](https://www.catchandrelease.com/m/storyteller-sign-up): Creator-side onboarding.
+
+## Company and legal
+
+- [About](https://www.catchandrelease.com/m/about-us)
+- [FAQ](https://www.catchandrelease.com/m/faq): Creator-facing — joining, uploading, ownership, how content is used, getting paid (PayPal, ACH, wire, check; W9/W8BEN).
+- [Newsroom](https://www.catchandrelease.com/m/newsroom)
+- [Careers](https://www.catchandrelease.com/m/careers)
+- [Terms of use](https://www.catchandrelease.com/m/terms-of-use)
+- [Privacy policy](https://www.catchandrelease.com/m/privacy-policy)
+- [Status](https://status.catchandrelease.com/)
+- [GitHub organization](https://github.com/CatchRelease): 35 public repositories — a React design system (arbor), a client-side ORM (crorm), Jest matchers, and forks of third-party OSS. No API client and no API contract.
+
+## Learning resources
+
+- [Blog](https://www.catchandrelease.com/m/resources/blog)
+- [Ebooks](https://www.catchandrelease.com/m/resources/ebooks)
+- [Webinars](https://www.catchandrelease.com/m/resources/webinars)
+- [Product walkthrough videos](https://www.catchandrelease.com/m/resources/videos)
+- [Case studies](https://www.catchandrelease.com/m/customers/case-studies)
+- [Curation masterclass](https://www.catchandrelease.com/m/masterclass)
+
+## Provenance
+
+Generated by the API Evangelist enrichment pipeline on 2026-08-12 from the
+catch-and-release apis.yml and the artifacts in this repository. Catch&Release does
+not publish an llms.txt of its own: https://www.catchandrelease.com/llms.txt returns
+HTTP 200 with the site's single-page-application HTML shell, not an llms.txt document.

@@ -1,15 +1,92 @@
-generated: '2026-07-18'
+generated: '2026-08-12'
 method: searched
-source: live probe of /.well-known/ on catch-and-release hosts
-host: https://auth.catchandrelease.com
+source: live probe of /.well-known/ on every Catch&Release host resolved from DNS
+provider: Catch&Release
+providerId: catch-and-release
+hosts_probed:
+  - https://www.catchandrelease.com
+  - https://catchandrelease.com
+  - https://auth.catchandrelease.com
+  - https://app.catchandrelease.com
+  - https://status.catchandrelease.com
 documents:
-- path: /.well-known/openid-configuration
-  status: 200
-  file: catch-and-release-openid-configuration.json
-  note: FusionAuth OIDC discovery for the Catch&Release app login (auth.catchandrelease.com)
-- path: /.well-known/oauth-authorization-server
-  status: 404
+  - host: https://auth.catchandrelease.com
+    path: /.well-known/openid-configuration
+    status: 200
+    content_type: application/json
+    file: catch-and-release-openid-configuration.json
+    real_document: true
+    note: >-
+      FusionAuth OIDC discovery for the Catch&Release application login. Issuer
+      https://auth.catchandrelease.com, authorization/token/userinfo/logout endpoints,
+      PKCE S256, DPoP signing algorithms, device authorization endpoint. This is the
+      login for the product web app, not an API authorization surface — app.catchandrelease.com
+      302s every path to /oauth2/authorize with scope "openid email profile offline_access".
+  - host: https://auth.catchandrelease.com
+    path: /.well-known/jwks.json
+    status: 200
+    content_type: application/json
+    file: catch-and-release-jwks.json
+    real_document: true
+    note: JSON Web Key Set backing the OIDC issuer — 2 RS256 public keys.
+  - host: https://auth.catchandrelease.com
+    path: /.well-known/oauth-authorization-server
+    status: 404
+    real_document: false
+  - host: https://auth.catchandrelease.com
+    path: /.well-known/oauth-protected-resource
+    status: 404
+    real_document: false
+  - host: https://www.catchandrelease.com
+    path: /.well-known/security.txt
+    status: 200
+    real_document: false
+    note: SOFT-404. See spa_catch_all below — 8,411-byte HTML shell, not RFC 9116 text.
+  - host: https://www.catchandrelease.com
+    path: /.well-known/api-catalog
+    status: 200
+    real_document: false
+    note: SOFT-404. Same 8,411-byte SPA shell.
+  - host: https://www.catchandrelease.com
+    path: /.well-known/ai-plugin.json
+    status: 200
+    real_document: false
+    note: SOFT-404. Same 8,411-byte SPA shell.
+  - host: https://www.catchandrelease.com
+    path: /.well-known/agent-card.json
+    status: 200
+    real_document: false
+    note: SOFT-404. Same 8,411-byte SPA shell — no AgentCard shape, no pointer emitted.
+  - host: https://www.catchandrelease.com
+    path: /.well-known/agent.json
+    status: 200
+    real_document: false
+    note: SOFT-404. Same 8,411-byte SPA shell (legacy pre-0.3 agent card path).
+  - host: https://catchandrelease.com
+    path: /.well-known/security.txt
+    status: 200
+    real_document: false
+    note: SOFT-404. Apex host serves the same SPA shell as www.
+  - host: https://app.catchandrelease.com
+    path: /.well-known/agent-card.json
+    status: 302
+    real_document: false
+    note: Redirects to https://auth.catchandrelease.com/oauth2/authorize — the whole app host is behind login.
 notes:
-- host: https://www.catchandrelease.com
-  observation: single-page app returns HTTP 200 with the index.html shell for all paths,
-    so /.well-known/security.txt is a soft-404 (HTML, not RFC 9116) and is not a real document.
+  - id: spa_catch_all
+    host: https://www.catchandrelease.com
+    observation: >-
+      The marketing site is a single-page application that answers HTTP 200 with an
+      identical 8,411-byte index.html shell for EVERY unmatched path, including every
+      /.well-known/* path and /openapi.json and /llms.txt. A 200 from this host is not
+      evidence of a document. Only byte-identical-shell detection distinguishes a real
+      hit from a soft-404 here, and every /.well-known/* path on www and the apex is a
+      soft-404.
+  - id: no_security_txt
+    observation: >-
+      No RFC 9116 security.txt is served on any host. No SecurityTxt pointer is emitted.
+  - id: well_known_pointer_justified
+    observation: >-
+      The WellKnown pointer in apis.yml IS justified: two real documents (OIDC discovery
+      and JWKS) are served with HTTP 200 and valid JSON from auth.catchandrelease.com,
+      a host Catch&Release controls (CNAME catchandrelease.fusionauth.io).

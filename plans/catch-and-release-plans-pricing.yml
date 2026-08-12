@@ -1,0 +1,117 @@
+specification: API Commons Plans
+specificationVersion: '0.1'
+schema: https://raw.githubusercontent.com/api-evangelist/interface-research/main/schema/api-commons.yml#/$defs/Plans
+provider: Catch&Release
+providerId: catch-and-release
+generated: '2026-08-12'
+method: searched
+created: '2026-08-12'
+modified: '2026-08-12'
+source: https://www.catchandrelease.com/m/pricing
+sources:
+  - https://www.catchandrelease.com/m/pricing
+  - https://www.catchandrelease.com/pricing-calculator
+  - https://www.catchandrelease.com/m/services/services-overview
+tags:
+  - Content Licensing
+  - User Generated Content
+  - Creator Economy
+  - Usage Based
+description: >-
+  Catch&Release does not sell seats or API calls. It sells clearance and licensing
+  of individual pieces of content, on an access-first, pay-for-what-you-use model:
+  the workspace itself is free to enter, and money changes hands per shot cleared
+  and per license negotiated. These are PRODUCT plans, not API plans — Catch&Release
+  publishes no API and therefore no API pricing. Prices below are quoted verbatim
+  from the public pricing page.
+plan_count: 4
+plans:
+  - id: catch-and-release-workspace-free
+    name: Workspace (Free)
+    type: free
+    price: 0
+    currency: USD
+    period: ongoing
+    description: >-
+      Free access to the Catch&Release workspace — create projects, search and add
+      content from the Creator Marketplace or from across the internet, and
+      collaborate with a team. No licensing rights are secured at this tier.
+    elements:
+      - name: Create projects
+      - name: Search and add content from the Creator Marketplace
+      - name: Search and add content from across the internet
+      - name: Team collaboration
+    limits:
+      - label: Licensing rights secured
+        value: none
+        note: Content can be collected and shared internally but not used until cleared and licensed.
+  - id: catch-and-release-clearance
+    name: Clearance fee
+    type: usage-based
+    period: usage
+    currency: USD
+    description: >-
+      Charged per shot before a license can be secured. Waived for content sourced
+      from the Creator Marketplace.
+    entries:
+      - label: Creator Marketplace content
+        name: clearance_marketplace
+        type: metered
+        metric: shot
+        unit: 1
+        price: '$0'
+        timeFrame: usage
+      - label: Internet or partner content
+        name: clearance_internet
+        type: metered
+        metric: shot
+        unit: 1
+        price: '$250 per shot (up to 30 seconds)'
+        timeFrame: usage
+  - id: catch-and-release-licensing
+    name: Licensing fee
+    type: usage-based
+    period: usage
+    currency: USD
+    description: >-
+      The license itself. Priced per shot and negotiated, not listed — it varies with
+      the usage terms requested (TV, digital, paid social), the license duration
+      (3 months, 6 months, 1 year), how many rightsholders are attached to the shot,
+      and the creator's own valuation of the work.
+    entries:
+      - label: Negotiated license (usage + duration + rightsholders + creator valuation)
+        name: license_negotiated
+        type: metered
+        metric: license
+        unit: 1
+        price: variable
+        timeFrame: usage
+      - label: Partner library / royalty-free option
+        name: license_partner_library
+        type: metered
+        metric: license
+        unit: 1
+        price: 'from $975'
+        timeFrame: usage
+  - id: catch-and-release-services
+    name: Add-on services (Expert Curation / Managed Services)
+    type: contact-sales
+    price: null
+    currency: USD
+    period: custom
+    description: >-
+      Optional human services layered on the workspace — Expert Curation and
+      Managed Services. Custom pricing; requires contacting the company.
+    elements:
+      - name: Expert Curation
+        url: https://www.catchandrelease.com/m/services/expert-curation
+      - name: Managed Services
+        url: https://www.catchandrelease.com/m/services/managed-services
+notes:
+  - >-
+    A public pricing calculator exists at https://www.catchandrelease.com/pricing-calculator
+    (HTTP 200) but it is a client-side single-page application; it exposes no
+    machine-readable price catalog endpoint.
+  - >-
+    No API plan, no API metering, no developer tier. Nothing on the pricing page
+    references API access, request volume, or keys.
