@@ -64,6 +64,99 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-Catch&Release is a company surfaced as a portfolio company of accel and added to the API Evangelist network as a stub for enrichment. Sector: cloud-saas. This profile is a lead awaiting the enrichment pipeline.
+Catch&Release is a UGC creator platform and content-licensing marketplace that helps brands and agencies discover, license, and clear rights for "found content" — real videos, photos, and footage created by everyday people and creators — for use in advertising and marketing campaigns. Its workspace lets marketing teams search and curate licensable moments, send content calls to its creator community, negotiate offers, and handle the legal clearance and rights packages, while creators earn passive income by licensing clips from their camera rolls. The platform pairs a brand/agency workspace (collections, storyboards, teams) with a creator community, using an access-first, pay-for-what-you-use model. Added to the API Evangelist network from an Accel portfolio lead.
 
-Backed by: accel — https://www.catchandrelease.com/
+**Areas:** Company · Cloud Saas · Content Licensing · User Generated Content · Creator Economy · Video · Advertising · Marketing · Media
+
+## Catch&Release on APIs.io
+
+Everything profiled for Catch&Release is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/catch-and-release/](https://apis.io/providers/catch-and-release/)** — or go straight to one of the APIs or properties below.
+
+### Published properties
+
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
+
+#### Security (1)
+
+Authentication, trust centre, and vulnerability disclosure.
+
+- [Catch And Release Domain Security](https://apis.io/security/catch-and-release/catch-and-release-domain-security/)
+
+#### Plans and pricing (1)
+
+Published plans, tiers and prices.
+
+- [Catch And Release Plans Pricing](https://apis.io/plans/catch-and-release/catch-and-release-plans-pricing/)
+
+#### Rate limits (1)
+
+Published request limits.
+
+- [Catch And Release Rate Limits](https://apis.io/rate-limits/catch-and-release/catch-and-release-rate-limits/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
+- [Website](https://www.catchandrelease.com/)
+- [Pricing](https://www.catchandrelease.com/m/pricing)
+- [Sign up](https://www.catchandrelease.com/sign-up)
+- [Support](https://www.catchandrelease.com/m/faq)
+- [Blog](https://www.catchandrelease.com/m/resources/blog)
+- [Terms of service](https://www.catchandrelease.com/m/terms-of-use)
+- [Privacy policy](https://www.catchandrelease.com/m/privacy-policy)
+- [GitHub](https://github.com/CatchRelease)
+- [Status](https://status.catchandrelease.com/)
+
+## API Evangelist rating
+
+**Kin Score 24.4** — emerging · rubric 0.24.0 · scored 2026-10-17
+
+| Facet | Score |
+|---|---|
+| Discoverability | 55.4 |
+| Contract quality | 0.0 |
+| Contract governance | 0.0 |
+| Operational transparency | 18.4 |
+| Developer ergonomics | 7.1 |
+| Access clarity | 76.3 |
+
+**Agent readiness 2.5** — human-only
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | — |
+| Agentic Access | — |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | — |
+| Idempotency | — |
+| Error Semantics | — |
+| OpenAPI Examples | — |
+| Rate Limit Signal | documented (partial credit) |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+
+**Regulatory alignment 13.7** — Horizontal (data, software, accessibility, platform)
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/catch-and-release/](https://apis.io/providers/catch-and-release/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Catch&Release: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/catch-and-release/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
